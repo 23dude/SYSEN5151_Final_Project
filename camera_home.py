@@ -193,21 +193,21 @@ html, body, [class*="css"] {
 }
 
 .stButton > button {
-    padding: 16px 48px !important;
+    padding: 12px 32px !important;
     background: #0071e3 !important;
     color: white !important;
-    font-size: 20px !important;
-    font-weight: 600 !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
     border: none !important;
-    border-radius: 12px !important;
+    border-radius: 980px !important;
     transition: all 0.3s ease !important;
-    box-shadow: 0 8px 20px rgba(0, 113, 227, 0.2) !important;
+    box-shadow: none !important;
 }
 
 .stButton > button:hover {
-    background: #0071e3 !important;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(0, 113, 227, 0.3) !important;
+    background: #0077ed !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2) !important;
 }
 
 .features-section {
@@ -372,6 +372,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 """, unsafe_allow_html=True)
+
 
 
 
