@@ -99,39 +99,12 @@ html {
     <div class="nav-container">
         <div class="logo">📷 Camera Finder</div>
         <div class="nav-links">
-            <span onclick="scrollToFeatures()">Features</span>
-            <span onclick="scrollToAbout()">About</span>
-            <span onclick="scrollToContact()">Contact</span>
+            <a href="#features-section" style="padding: 0 16px; height: 48px; display: flex; align-items: center; font-size: 14px; color: #1d1d1f; text-decoration: none; transition: color 0.2s ease; cursor: pointer;">Features</a>
+            <a href="#about-section" style="padding: 0 16px; height: 48px; display: flex; align-items: center; font-size: 14px; color: #1d1d1f; text-decoration: none; transition: color 0.2s ease; cursor: pointer;">About</a>
+            <a href="#contact-section" style="padding: 0 16px; height: 48px; display: flex; align-items: center; font-size: 14px; color: #1d1d1f; text-decoration: none; transition: color 0.2s ease; cursor: pointer;">Contact</a>
         </div>
     </div>
 </div>
-
-<script>
-function scrollToFeatures() {
-    const element = document.getElementById('features-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-function scrollToAbout() {
-    const element = document.getElementById('about-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-function scrollToContact() {
-    const element = document.getElementById('contact-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-</script>
 """, unsafe_allow_html=True)
 
 # ============================================================
