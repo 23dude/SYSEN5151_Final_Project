@@ -1,5 +1,4 @@
 import streamlit as st
-import streamlit.components.v1 as components
 
 # ============================================================
 # PAGE CONFIG
@@ -68,7 +67,7 @@ html {
     padding: 0;
 }
 
-.nav-links span {
+.nav-links a {
     padding: 0 16px;
     height: 48px;
     display: flex;
@@ -80,13 +79,13 @@ html {
     cursor: pointer;
 }
 
-.nav-links span:hover {
+.nav-links a:hover {
     color: #0071e3 !important;
 }
 
-/* Smooth scroll offset for fixed navbar */
-.scroll-target {
-    scroll-margin-top: 70px;
+/* Adjust scroll offset for fixed navbar */
+#features {
+    scroll-margin-top: 60px;
 }
 
 /* Add padding to main content to account for fixed navbar */
@@ -99,39 +98,12 @@ html {
     <div class="nav-container">
         <div class="logo">📷 Camera Finder</div>
         <div class="nav-links">
-            <span onclick="scrollToFeatures()">Features</span>
-            <span onclick="scrollToAbout()">About</span>
-            <span onclick="scrollToContact()">Contact</span>
+            <a href="#features">Features</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </div>
     </div>
 </div>
-
-<script>
-function scrollToFeatures() {
-    const element = document.getElementById('features-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-function scrollToAbout() {
-    const element = document.getElementById('about-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-function scrollToContact() {
-    const element = document.getElementById('contact-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-</script>
 """, unsafe_allow_html=True)
 
 # ============================================================
@@ -299,7 +271,7 @@ st.markdown('<div style="padding: 20px;"></div>', unsafe_allow_html=True)
 # Features Section
 # ============================================================
 st.markdown("""
-<div class="features-section scroll-target" id="features-section">
+<div class="features-section" id="features">
     <h2 class="features-title">Powerful Features</h2>
     <div class="features-grid">
         <div class="feature-card">
@@ -320,52 +292,7 @@ st.markdown("""
     </div>
 </div>
 
-<div class="about-section scroll-target" id="about-section" style="background: #fff; padding: 80px 20px; text-align: center;">
-    <h2 class="features-title">About</h2>
-    <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto;">Camera Finder is a professional tool designed to help you select the best camera for your needs. Our intelligent system provides recommendations, comparisons, and technical insights.</p>
-</div>
-
-<div class="contact-section scroll-target" id="contact-section" style="background: #f5f5f7; padding: 80px 20px; text-align: center;">
-    <h2 class="features-title">Contact</h2>
-    <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto;">For support or inquiries, please email us at <a href="mailto:info@camerafinder.com">info@camerafinder.com</a>.</p>
-</div>
-
 <div class="footer-section">
     <p class="footer-text">Camera Finder v1.0 | Professional Camera Selection Tool</p>
 </div>
-""", unsafe_allow_html=True)
-
-st.markdown("""
-<script>
-function scrollToFeatures() {
-    const element = document.getElementById('features-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-function scrollToAbout() {
-    const element = document.getElementById('about-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-function scrollToContact() {
-    const element = document.getElementById('contact-section');
-    if (element) {
-        const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
-    }
-}
-// Re-attach scroll functions after DOM updates (Streamlit rerender)
-document.addEventListener('DOMContentLoaded', function() {
-    window.scrollToFeatures = scrollToFeatures;
-    window.scrollToAbout = scrollToAbout;
-    window.scrollToContact = scrollToContact;
-});
-</script>
 """, unsafe_allow_html=True)
