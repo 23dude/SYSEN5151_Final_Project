@@ -105,34 +105,37 @@ html {
         </div>
     </div>
 </div>
+""", unsafe_allow_html=True)
 
+# JavaScript for smooth scrolling
+components.html("""
 <script>
-function scrollToFeatures() {
-    const element = document.getElementById('features-section');
+window.scrollToFeatures = function() {
+    const element = parent.document.getElementById('features-section');
     if (element) {
         const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        const y = element.getBoundingClientRect().top + parent.window.pageYOffset + yOffset;
+        parent.window.scrollTo({top: y, behavior: 'smooth'});
     }
 }
-function scrollToAbout() {
-    const element = document.getElementById('about-section');
+window.scrollToAbout = function() {
+    const element = parent.document.getElementById('about-section');
     if (element) {
         const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        const y = element.getBoundingClientRect().top + parent.window.pageYOffset + yOffset;
+        parent.window.scrollTo({top: y, behavior: 'smooth'});
     }
 }
-function scrollToContact() {
-    const element = document.getElementById('contact-section');
+window.scrollToContact = function() {
+    const element = parent.document.getElementById('contact-section');
     if (element) {
         const yOffset = -60;
-        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({top: y, behavior: 'smooth'});
+        const y = element.getBoundingClientRect().top + parent.window.pageYOffset + yOffset;
+        parent.window.scrollTo({top: y, behavior: 'smooth'});
     }
 }
 </script>
-""", unsafe_allow_html=True)
+""", height=0)
 
 # ============================================================
 # Hero Section with Button
@@ -152,7 +155,7 @@ html, body, [class*="css"] {
 
 .hero-section {
     text-align: center;
-    padding: 100px 20px 40px;
+    padding: 60px 20px 40px;
     background: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
 }
 
