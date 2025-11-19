@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 
 # ============================================================
 # PAGE CONFIG
@@ -67,7 +68,7 @@ html {
     padding: 0;
 }
 
-.nav-links a {
+.nav-link {
     padding: 0 16px;
     height: 48px;
     display: flex;
@@ -79,13 +80,13 @@ html {
     cursor: pointer;
 }
 
-.nav-links a:hover {
+.nav-link:hover {
     color: #0071e3 !important;
 }
 
-/* Adjust scroll offset for fixed navbar */
-#features {
-    scroll-margin-top: 60px;
+/* Smooth scroll offset for fixed navbar */
+.scroll-target {
+    scroll-margin-top: 70px;
 }
 
 /* Add padding to main content to account for fixed navbar */
@@ -98,9 +99,9 @@ html {
     <div class="nav-container">
         <div class="logo">📷 Camera Finder</div>
         <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="#features-section" class="nav-link">Features</a>
+            <a href="#about-section" class="nav-link">About</a>
+            <a href="#contact-section" class="nav-link">Contact</a>
         </div>
     </div>
 </div>
@@ -271,7 +272,7 @@ st.markdown('<div style="padding: 20px;"></div>', unsafe_allow_html=True)
 # Features Section
 # ============================================================
 st.markdown("""
-<div class="features-section" id="features">
+<div class="features-section scroll-target" id="features-section">
     <h2 class="features-title">Powerful Features</h2>
     <div class="features-grid">
         <div class="feature-card">
@@ -292,7 +293,34 @@ st.markdown("""
     </div>
 </div>
 
+<div class="about-section scroll-target" id="about-section" style="background: #fff; padding: 80px 20px; text-align: center;">
+    <h2 class="features-title">About</h2>
+    <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto;">Camera Finder is a professional tool designed to help you select the best camera for your needs. Our intelligent system provides recommendations, comparisons, and technical insights.</p>
+</div>
+
+<div class="contact-section scroll-target" id="contact-section" style="background: #f5f5f7; padding: 80px 20px; text-align: center;">
+    <h2 class="features-title">Contact</h2>
+    <p style="font-size: 18px; color: #666; max-width: 700px; margin: 0 auto;">For support or inquiries, please email us at <a href="mailto:info@camerafinder.com">info@camerafinder.com</a>.</p>
+</div>
+
 <div class="footer-section">
     <p class="footer-text">Camera Finder v1.0 | Professional Camera Selection Tool</p>
 </div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<script>
+document.querySelectorAll('.nav-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+        var href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            var target = document.querySelector(href);
+            if (target) {
+                target.scrollIntoView({behavior: 'smooth'});
+                e.preventDefault();
+            }
+        }
+    });
+});
+</script>
 """, unsafe_allow_html=True)
