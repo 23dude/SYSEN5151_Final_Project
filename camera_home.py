@@ -68,7 +68,7 @@ html {
     padding: 0;
 }
 
-.nav-link {
+.nav-links span {
     padding: 0 16px;
     height: 48px;
     display: flex;
@@ -80,7 +80,7 @@ html {
     cursor: pointer;
 }
 
-.nav-link:hover {
+.nav-links span:hover {
     color: #0071e3 !important;
 }
 
@@ -99,12 +99,39 @@ html {
     <div class="nav-container">
         <div class="logo">📷 Camera Finder</div>
         <div class="nav-links">
-            <a href="#features-section" class="nav-link">Features</a>
-            <a href="#about-section" class="nav-link">About</a>
-            <a href="#contact-section" class="nav-link">Contact</a>
+            <span onclick="scrollToFeatures()">Features</span>
+            <span onclick="scrollToAbout()">About</span>
+            <span onclick="scrollToContact()">Contact</span>
         </div>
     </div>
 </div>
+
+<script>
+function scrollToFeatures() {
+    const element = document.getElementById('features-section');
+    if (element) {
+        const yOffset = -60;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+}
+function scrollToAbout() {
+    const element = document.getElementById('about-section');
+    if (element) {
+        const yOffset = -60;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+}
+function scrollToContact() {
+    const element = document.getElementById('contact-section');
+    if (element) {
+        const yOffset = -60;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+}
+</script>
 """, unsafe_allow_html=True)
 
 # ============================================================
@@ -310,17 +337,35 @@ st.markdown("""
 
 st.markdown("""
 <script>
-document.querySelectorAll('.nav-link').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-        var href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-            var target = document.querySelector(href);
-            if (target) {
-                target.scrollIntoView({behavior: 'smooth'});
-                e.preventDefault();
-            }
-        }
-    });
+function scrollToFeatures() {
+    const element = document.getElementById('features-section');
+    if (element) {
+        const yOffset = -60;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+}
+function scrollToAbout() {
+    const element = document.getElementById('about-section');
+    if (element) {
+        const yOffset = -60;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+}
+function scrollToContact() {
+    const element = document.getElementById('contact-section');
+    if (element) {
+        const yOffset = -60;
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+    }
+}
+// Re-attach scroll functions after DOM updates (Streamlit rerender)
+document.addEventListener('DOMContentLoaded', function() {
+    window.scrollToFeatures = scrollToFeatures;
+    window.scrollToAbout = scrollToAbout;
+    window.scrollToContact = scrollToContact;
 });
 </script>
 """, unsafe_allow_html=True)
