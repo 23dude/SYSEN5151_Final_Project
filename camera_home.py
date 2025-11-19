@@ -155,7 +155,7 @@ html, body, [class*="css"] {
 
 .hero-section {
     text-align: center;
-    padding: 30px 20px 40px;
+    padding: 10px 20px 40px;
     background: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
 }
 
@@ -372,4 +372,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 """, unsafe_allow_html=True)
+
 
