@@ -330,7 +330,7 @@ html, body, [class*="css"] {
 # ============================================================
 # Get Started Button (Centered)
 # ============================================================
-col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11 = st.columns([1, 1, 1, 1, 1, 0.6, 1, 1, 1, 1, 1])
+col1, col2, col3, col4, col5, col6, col7, col8, col9, col10, col11 = st.columns([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
 with col6:
     if st.button("Get Started", key="start_finder", use_container_width=True):
         st.switch_page("pages/1_camera_finder.py")
@@ -411,6 +411,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 """, unsafe_allow_html=True)
+
 
 
 
