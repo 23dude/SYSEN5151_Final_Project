@@ -6,6 +6,45 @@ import streamlit.components.v1 as components
 # ============================================================
 st.set_page_config(page_title="Camera Finder", layout="wide")
 
+# Sidebar navigation styling
+st.markdown("""
+<style>
+/* Sidebar navigation styling */
+[data-testid="stSidebarNav"] {
+    padding-top: 2rem;
+}
+
+[data-testid="stSidebarNav"] ul {
+    padding: 0;
+}
+
+[data-testid="stSidebarNav"] li {
+    list-style: none;
+}
+
+[data-testid="stSidebarNav"] a {
+    font-size: 15px !important;
+    font-weight: 400 !important;
+    color: #1d1d1f !important;
+    text-decoration: none !important;
+    padding: 8px 16px !important;
+    display: block !important;
+    border-radius: 6px !important;
+    transition: background-color 0.2s ease !important;
+}
+
+[data-testid="stSidebarNav"] a:hover {
+    background-color: #f5f5f7 !important;
+}
+
+[data-testid="stSidebarNav"] a[aria-current="page"] {
+    font-weight: 600 !important;
+    color: #1d1d1f !important;
+    background-color: #e8e8ed !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 # ============================================================
 # Top Navigation Bar
 # ============================================================
@@ -155,7 +194,7 @@ html, body, [class*="css"] {
 
 .hero-section {
     text-align: center;
-    padding: 0px 0px 40px;
+    padding: 0px 20px 40px;
     background: linear-gradient(135deg, #ffffff 0%, #f9f9fb 100%);
 }
 
@@ -291,10 +330,10 @@ html, body, [class*="css"] {
 # ============================================================
 # Get Started Button (Centered)
 # ============================================================
-col1, col2, col3, col4, col5, col6, col7 = st.columns([1, 1, 1, 1, 1, 1, 1])
-with col4:
+col1, col2, col3, col4, col5, col6, col7, col8, col9 = st.columns([1, 1, 1, 1, 1, 1, 1, 1, 1])
+with col5:
     if st.button("Get Started", key="start_finder", use_container_width=True):
-        st.switch_page("pages/camera_finder.py")
+        st.switch_page("pages/1_camera_finder.py")
 
 st.markdown('<div style="padding: 20px;"></div>', unsafe_allow_html=True)
 
@@ -305,14 +344,14 @@ st.markdown("""
 <div class="features-section scroll-target" id="features-section">
     <h2 class="features-title">Powerful Features</h2>
     <div class="features-grid">
-        <div class="feature-card">
+        <div class="feature-card" onclick="window.location.href='1_camera_finder'" style="cursor: pointer;">
             <div class="feature-icon">⚡</div>
             <h3>Smart Recommendations</h3>
             <p>AI-powered analysis to find your ideal camera instantly</p>
         </div>
-        <div class="feature-card">
+        <div class="feature-card" onclick="window.location.href='2_camera_checker'" style="cursor: pointer;">
             <div class="feature-icon">🎯</div>
-            <h3>Precision Calculation</h3>
+            <h3>Optical Calculator</h3>
             <p>Advanced optical engineering equations at your fingertips</p>
         </div>
         <div class="feature-card">
@@ -372,10 +411,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 """, unsafe_allow_html=True)
-
-
-
-
-
-
-
