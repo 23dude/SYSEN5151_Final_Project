@@ -183,14 +183,6 @@ label, .stSelectbox label, .stSlider label, .stTextInput label {
     font-size: 15px !important;
 }
 
-/* BUTTONS - Only affect main content area buttons --------------------*/
-div[data-testid="stMain"] .stButton>button {
-    font-size: 15px !important;
-    font-weight: 400 !important;
-    padding: 10px 20px !important;
-    border-radius: 980px !important;
-}
-
 /* Object selection buttons - styled as cards */
 div[data-testid="stMain"] .stButton>button[key^="obj_"] {
     width: 100% !important;
@@ -216,6 +208,35 @@ div[data-testid="stMain"] .stButton>button[key^="obj_"]:focus {
     border-color: #0071e3 !important;
     border-width: 3px !important;
     box-shadow: none !important;
+}
+
+/* ALL OTHER BUTTONS - Blue background with pill shape */
+div[data-testid="stMain"] .stButton > button:not([key^="obj_"]) {
+    padding: 12px 32px !important;
+    background: #0071e3 !important;
+    color: white !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    border: none !important;
+    border-radius: 980px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+div[data-testid="stMain"] .stButton > button:not([key^="obj_"]):hover {
+    background: #0077ed !important;
+    color: white !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2) !important;
+}
+
+/* Up/Down arrow buttons - smaller size */
+div[data-testid="stMain"] .stButton > button[key^="up_"],
+div[data-testid="stMain"] .stButton > button[key^="down_"] {
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    min-width: 36px !important;
+    height: 36px !important;
 }
 
 /* Style for radio buttons as cards */
@@ -266,48 +287,6 @@ div[data-testid="stMain"] .stButton>button[key^="obj_"]:focus {
 .stRadio > div > label:has(input[type="radio"]:checked) {
     border: 3px solid #0071e3 !important;
     background: white !important;
-}
-
-/* Start button - matches camera_home.py style */
-div[data-testid="stMain"] .stButton > button:not([key^="obj_"]):not([key^="up_"]):not([key^="down_"]) {
-    padding: 12px 32px !important;
-    background: #0071e3 !important;
-    color: white !important;
-    font-size: 17px !important;
-    font-weight: 400 !important;
-    border: none !important;
-    border-radius: 980px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: none !important;
-}
-
-div[data-testid="stMain"] .stButton > button:not([key^="obj_"]):not([key^="up_"]):not([key^="down_"]):hover {
-    background: #0077ed !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2) !important;
-}
-
-/* Up/Down arrow buttons - match camera_home.py style */
-div[data-testid="stMain"] .stButton > button[key^="up_"],
-div[data-testid="stMain"] .stButton > button[key^="down_"] {
-    padding: 8px 12px !important;
-    background: #0071e3 !important;
-    color: white !important;
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    border: none !important;
-    border-radius: 6px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: none !important;
-    min-width: 36px !important;
-    height: 36px !important;
-}
-
-div[data-testid="stMain"] .stButton > button[key^="up_"]:hover,
-div[data-testid="stMain"] .stButton > button[key^="down_"]:hover {
-    background: #0077ed !important;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2) !important;
 }
 
 /* Cards --------------------------------------------------------------*/
