@@ -112,8 +112,8 @@ st.markdown("""
         <span class="logo" onclick="window.location.href='/'">📷 Camera Finder</span>
         <div class="nav-links">
             <span onclick="window.location.href='/'">Home</span>
-            <span onclick="window.location.href='/camera_finder'">Camera Finder</span>
-            <span onclick="window.location.href='/camera_checker'">Camera Checker</span>
+            <span onclick="window.location.href='/1_camera_finder'">Camera Finder</span>
+            <span onclick="window.location.href='/2_camera_checker'">Camera Checker</span>
         </div>
     </div>
 </div>
@@ -136,6 +136,26 @@ html, body, [class*="css"] {
 /* Add top padding to account for fixed navbar */
 [data-testid="stAppViewContainer"] {
     padding-top: 48px !important;
+}
+
+/* Override Streamlit default button colors */
+button[kind="primary"],
+button[kind="secondary"],
+.stButton > button,
+div[data-testid="stMainBlockContainer"] button {
+    background-color: #0071e3 !important;
+    background: #0071e3 !important;
+    color: white !important;
+    border: none !important;
+}
+
+button[kind="primary"]:hover,
+button[kind="secondary"]:hover,
+.stButton > button:hover,
+div[data-testid="stMainBlockContainer"] button:hover {
+    background-color: #0077ed !important;
+    background: #0077ed !important;
+    color: white !important;
 }
 
 /* Input Labels --------------------------------------------------------*/
@@ -183,8 +203,27 @@ label, .stSelectbox label, .stSlider label, .stTextInput label {
     font-size: 15px !important;
 }
 
+/* BUTTONS - Match camera_home.py style exactly ----------------------*/
+.stButton > button {
+    padding: 12px 32px !important;
+    background: #0071e3 !important;
+    color: white !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    border: none !important;
+    border-radius: 980px !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+}
+
+.stButton > button:hover {
+    background: #0077ed !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2) !important;
+}
+
 /* Object selection buttons - styled as cards */
-div[data-testid="stMain"] .stButton>button[key^="obj_"] {
+.stButton>button[key^="obj_"] {
     width: 100% !important;
     border: 2px solid #e5e5e7 !important;
     border-radius: 8px !important;
@@ -197,46 +236,17 @@ div[data-testid="stMain"] .stButton>button[key^="obj_"] {
     box-shadow: none !important;
 }
 
-div[data-testid="stMain"] .stButton>button[key^="obj_"]:hover {
+.stButton>button[key^="obj_"]:hover {
     border-color: #0071e3 !important;
     box-shadow: none !important;
     background: white !important;
     color: #1d1d1d !important;
 }
 
-div[data-testid="stMain"] .stButton>button[key^="obj_"]:focus {
+.stButton>button[key^="obj_"]:focus {
     border-color: #0071e3 !important;
     border-width: 3px !important;
     box-shadow: none !important;
-}
-
-/* ALL OTHER BUTTONS - Blue background with pill shape */
-div[data-testid="stMain"] .stButton > button:not([key^="obj_"]) {
-    padding: 12px 32px !important;
-    background: #0071e3 !important;
-    color: white !important;
-    font-size: 17px !important;
-    font-weight: 400 !important;
-    border: none !important;
-    border-radius: 980px !important;
-    transition: all 0.3s ease !important;
-    box-shadow: none !important;
-}
-
-div[data-testid="stMain"] .stButton > button:not([key^="obj_"]):hover {
-    background: #0077ed !important;
-    color: white !important;
-    transform: translateY(-1px) !important;
-    box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2) !important;
-}
-
-/* Up/Down arrow buttons - smaller size */
-div[data-testid="stMain"] .stButton > button[key^="up_"],
-div[data-testid="stMain"] .stButton > button[key^="down_"] {
-    padding: 8px 12px !important;
-    font-size: 14px !important;
-    min-width: 36px !important;
-    height: 36px !important;
 }
 
 /* Style for radio buttons as cards */
