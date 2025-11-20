@@ -143,19 +143,20 @@ button[kind="primary"],
 button[kind="secondary"],
 .stButton > button,
 div[data-testid="stMainBlockContainer"] button {
-    background-color: #0071e3 !important;
-    background: #0071e3 !important;
-    color: white !important;
-    border: none !important;
+    background-color: white !important;
+    background: white !important;
+    color: #0071e3 !important;
+    border: 2px solid #0071e3 !important;
 }
 
 button[kind="primary"]:hover,
 button[kind="secondary"]:hover,
 .stButton > button:hover,
 div[data-testid="stMainBlockContainer"] button:hover {
-    background-color: #0077ed !important;
-    background: #0077ed !important;
-    color: white !important;
+    background-color: #f5f5f7 !important;
+    background: #f5f5f7 !important;
+    color: #0077ed !important;
+    border: 2px solid #0077ed !important;
 }
 
 /* Input Labels --------------------------------------------------------*/
@@ -206,18 +207,20 @@ label, .stSelectbox label, .stSlider label, .stTextInput label {
 /* BUTTONS - Match camera_home.py style exactly ----------------------*/
 .stButton > button {
     padding: 12px 32px !important;
-    background: #0071e3 !important;
-    color: white !important;
+    background: white !important;
+    color: #0071e3 !important;
     font-size: 17px !important;
     font-weight: 400 !important;
-    border: none !important;
+    border: 2px solid #0071e3 !important;
     border-radius: 980px !important;
     transition: all 0.3s ease !important;
     box-shadow: none !important;
 }
 
 .stButton > button:hover {
-    background: #0077ed !important;
+    background: #f5f5f7 !important;
+    color: #0077ed !important;
+    border: 2px solid #0077ed !important;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 113, 227, 0.2) !important;
 }
